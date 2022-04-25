@@ -16,7 +16,5 @@ class SchedulersPublishOnServiceTest {
         StepVerifier.create(flux)
                 .expectNextCount(6)
                 .verifyComplete();
-
     }
-
 }
