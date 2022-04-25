@@ -1,4 +1,4 @@
-package com.example.schedulers;
+package com.example.schedulers.service;
 
 import reactor.core.publisher.Flux;
 
@@ -8,7 +8,7 @@ import java.util.List;
 public class FluxService {
 
     Flux<String> nameFluxFlatMap(int stringLength) {
-        return Flux.fromIterable(List.of("Felipe", "Dani", "Renato"))
+        return Flux.fromIterable(List.of("Felipe", "Dani", "Renato", "Luis"))
                 .map(String::toUpperCase)
                 .filter(s -> s.length() == stringLength)
                 .flatMap(this::splitString)
@@ -34,5 +34,4 @@ public class FluxService {
         return Flux.fromArray(charArray)
                 .delayElements(Duration.ofMillis(delay));
     }
-
 }

@@ -1,9 +1,7 @@
-package com.example.schedulers;
+package com.example.schedulers.service;
 
 import org.junit.jupiter.api.Test;
 import reactor.test.StepVerifier;
-
-import static org.junit.jupiter.api.Assertions.*;
 
 class FluxServiceTest {
 
@@ -15,9 +13,10 @@ class FluxServiceTest {
         var nameFlux = fluxService.nameFluxFlatMap(4);
 
         StepVerifier.create(nameFlux)
-                .expectNext("D","A","N","I")
+                .expectNext("D","A","N","I","L","U","I","S")
                 .verifyComplete();
     }
+
     @Test
     void nameFluxFlatMapAsync() {
 
@@ -28,5 +27,4 @@ class FluxServiceTest {
                 .expectNextCount(12)
                 .verifyComplete();
     }
-
 }
